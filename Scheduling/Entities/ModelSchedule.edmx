@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SchedulingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Blok">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codeTeach" Type="int" />
+          <Property Name="minOfHours" Type="int" />
+          <Property Name="maxOfHours" Type="int" />
+        </EntityType>
+        <EntityType Name="IdealHours">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codeProf" Type="int" />
+          <Property Name="numOfHours" Type="int" />
+        </EntityType>
+        <EntityType Name="ImpossibleHours">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codeTeach" Type="int" />
+          <Property Name="hourOfTheDay" Type="int" />
+          <Property Name="day" Type="int" />
+        </EntityType>
+        <EntityType Name="Professions">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codeTeach" Type="int" />
+          <Property Name="professionName" Type="char" MaxLength="20" />
+          <Property Name="numOfHours" Type="int" />
+        </EntityType>
+        <EntityType Name="teachers">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstName" Type="char" MaxLength="20" />
+          <Property Name="lastName" Type="char" MaxLength="20" />
+          <Property Name="id" Type="char" MaxLength="20" />
+          <Property Name="phone" Type="char" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__Blok__codeTeach__440B1D61">
+          <End Role="teachers" Type="Self.teachers" Multiplicity="0..1" />
+          <End Role="Blok" Type="Self.Blok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teachers">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="Blok">
+              <PropertyRef Name="codeTeach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__IdealHour__codeP__403A8C7D">
+          <End Role="Professions" Type="Self.Professions" Multiplicity="0..1" />
+          <End Role="IdealHours" Type="Self.IdealHours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professions">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="IdealHours">
+              <PropertyRef Name="codeProf" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Impossibl__codeT__3B75D760">
+          <End Role="teachers" Type="Self.teachers" Multiplicity="0..1" />
+          <End Role="ImpossibleHours" Type="Self.ImpossibleHours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teachers">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="ImpossibleHours">
+              <PropertyRef Name="codeTeach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Professio__codeT__38996AB5">
+          <End Role="teachers" Type="Self.teachers" Multiplicity="0..1" />
+          <End Role="Professions" Type="Self.Professions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teachers">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="Professions">
+              <PropertyRef Name="codeTeach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SchedulingModelStoreContainer">
+          <EntitySet Name="Blok" EntityType="Self.Blok" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IdealHours" EntityType="Self.IdealHours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImpossibleHours" EntityType="Self.ImpossibleHours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Professions" EntityType="Self.Professions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="teachers" EntityType="Self.teachers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Blok__codeTeach__440B1D61" Association="Self.FK__Blok__codeTeach__440B1D61">
+            <End Role="teachers" EntitySet="teachers" />
+            <End Role="Blok" EntitySet="Blok" />
+          </AssociationSet>
+          <AssociationSet Name="FK__IdealHour__codeP__403A8C7D" Association="Self.FK__IdealHour__codeP__403A8C7D">
+            <End Role="Professions" EntitySet="Professions" />
+            <End Role="IdealHours" EntitySet="IdealHours" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Impossibl__codeT__3B75D760" Association="Self.FK__Impossibl__codeT__3B75D760">
+            <End Role="teachers" EntitySet="teachers" />
+            <End Role="ImpossibleHours" EntitySet="ImpossibleHours" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Professio__codeT__38996AB5" Association="Self.FK__Professio__codeT__38996AB5">
+            <End Role="teachers" EntitySet="teachers" />
+            <End Role="Professions" EntitySet="Professions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchedulingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SchedulingEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Bloks" EntityType="SchedulingModel.Blok" />
+          <EntitySet Name="IdealHours" EntityType="SchedulingModel.IdealHour" />
+          <EntitySet Name="ImpossibleHours" EntityType="SchedulingModel.ImpossibleHour" />
+          <EntitySet Name="Professions" EntityType="SchedulingModel.Profession" />
+          <EntitySet Name="teachers" EntityType="SchedulingModel.teacher" />
+          <AssociationSet Name="FK__Blok__codeTeach__440B1D61" Association="SchedulingModel.FK__Blok__codeTeach__440B1D61">
+            <End Role="teacher" EntitySet="teachers" />
+            <End Role="Blok" EntitySet="Bloks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__IdealHour__codeP__403A8C7D" Association="SchedulingModel.FK__IdealHour__codeP__403A8C7D">
+            <End Role="Profession" EntitySet="Professions" />
+            <End Role="IdealHour" EntitySet="IdealHours" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Impossibl__codeT__3B75D760" Association="SchedulingModel.FK__Impossibl__codeT__3B75D760">
+            <End Role="teacher" EntitySet="teachers" />
+            <End Role="ImpossibleHour" EntitySet="ImpossibleHours" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Professio__codeT__38996AB5" Association="SchedulingModel.FK__Professio__codeT__38996AB5">
+            <End Role="teacher" EntitySet="teachers" />
+            <End Role="Profession" EntitySet="Professions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Blok">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codeTeach" Type="Int32" />
+          <Property Name="minOfHours" Type="Int32" />
+          <Property Name="maxOfHours" Type="Int32" />
+          <NavigationProperty Name="teacher" Relationship="SchedulingModel.FK__Blok__codeTeach__440B1D61" FromRole="Blok" ToRole="teacher" />
+        </EntityType>
+        <EntityType Name="IdealHour">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codeProf" Type="Int32" />
+          <Property Name="numOfHours" Type="Int32" />
+          <NavigationProperty Name="Profession" Relationship="SchedulingModel.FK__IdealHour__codeP__403A8C7D" FromRole="IdealHour" ToRole="Profession" />
+        </EntityType>
+        <EntityType Name="ImpossibleHour">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codeTeach" Type="Int32" />
+          <Property Name="hourOfTheDay" Type="Int32" />
+          <Property Name="day" Type="Int32" />
+          <NavigationProperty Name="teacher" Relationship="SchedulingModel.FK__Impossibl__codeT__3B75D760" FromRole="ImpossibleHour" ToRole="teacher" />
+        </EntityType>
+        <EntityType Name="Profession">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codeTeach" Type="Int32" />
+          <Property Name="professionName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="numOfHours" Type="Int32" />
+          <NavigationProperty Name="IdealHours" Relationship="SchedulingModel.FK__IdealHour__codeP__403A8C7D" FromRole="Profession" ToRole="IdealHour" />
+          <NavigationProperty Name="teacher" Relationship="SchedulingModel.FK__Professio__codeT__38996AB5" FromRole="Profession" ToRole="teacher" />
+        </EntityType>
+        <EntityType Name="teacher">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="id" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Bloks" Relationship="SchedulingModel.FK__Blok__codeTeach__440B1D61" FromRole="teacher" ToRole="Blok" />
+          <NavigationProperty Name="ImpossibleHours" Relationship="SchedulingModel.FK__Impossibl__codeT__3B75D760" FromRole="teacher" ToRole="ImpossibleHour" />
+          <NavigationProperty Name="Professions" Relationship="SchedulingModel.FK__Professio__codeT__38996AB5" FromRole="teacher" ToRole="Profession" />
+        </EntityType>
+        <Association Name="FK__Blok__codeTeach__440B1D61">
+          <End Type="SchedulingModel.teacher" Role="teacher" Multiplicity="0..1" />
+          <End Type="SchedulingModel.Blok" Role="Blok" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teacher">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="Blok">
+              <PropertyRef Name="codeTeach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__IdealHour__codeP__403A8C7D">
+          <End Type="SchedulingModel.Profession" Role="Profession" Multiplicity="0..1" />
+          <End Type="SchedulingModel.IdealHour" Role="IdealHour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profession">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="IdealHour">
+              <PropertyRef Name="codeProf" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Impossibl__codeT__3B75D760">
+          <End Type="SchedulingModel.teacher" Role="teacher" Multiplicity="0..1" />
+          <End Type="SchedulingModel.ImpossibleHour" Role="ImpossibleHour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teacher">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="ImpossibleHour">
+              <PropertyRef Name="codeTeach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Professio__codeT__38996AB5">
+          <End Type="SchedulingModel.teacher" Role="teacher" Multiplicity="0..1" />
+          <End Type="SchedulingModel.Profession" Role="Profession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teacher">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="Profession">
+              <PropertyRef Name="codeTeach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchedulingModelStoreContainer" CdmEntityContainer="SchedulingEntities" >
+          <EntitySetMapping Name="Bloks">
+            <EntityTypeMapping TypeName="SchedulingModel.Blok">
+              <MappingFragment StoreEntitySet="Blok">
+                <ScalarProperty Name="maxOfHours" ColumnName="maxOfHours" />
+                <ScalarProperty Name="minOfHours" ColumnName="minOfHours" />
+                <ScalarProperty Name="codeTeach" ColumnName="codeTeach" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdealHours">
+            <EntityTypeMapping TypeName="SchedulingModel.IdealHour">
+              <MappingFragment StoreEntitySet="IdealHours">
+                <ScalarProperty Name="numOfHours" ColumnName="numOfHours" />
+                <ScalarProperty Name="codeProf" ColumnName="codeProf" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImpossibleHours">
+            <EntityTypeMapping TypeName="SchedulingModel.ImpossibleHour">
+              <MappingFragment StoreEntitySet="ImpossibleHours">
+                <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="hourOfTheDay" ColumnName="hourOfTheDay" />
+                <ScalarProperty Name="codeTeach" ColumnName="codeTeach" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Professions">
+            <EntityTypeMapping TypeName="SchedulingModel.Profession">
+              <MappingFragment StoreEntitySet="Professions">
+                <ScalarProperty Name="numOfHours" ColumnName="numOfHours" />
+                <ScalarProperty Name="professionName" ColumnName="professionName" />
+                <ScalarProperty Name="codeTeach" ColumnName="codeTeach" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teachers">
+            <EntityTypeMapping TypeName="SchedulingModel.teacher">
+              <MappingFragment StoreEntitySet="teachers">
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

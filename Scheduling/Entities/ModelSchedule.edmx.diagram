@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab4bad4334104f4fbb4ffa9e963dde64" Name="Diagram1" >
+        <EntityTypeShape EntityType="SchedulingModel.Blok" Width="1.5" PointX="3" PointY="6.875" />
+        <EntityTypeShape EntityType="SchedulingModel.IdealHour" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="SchedulingModel.ImpossibleHour" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="SchedulingModel.Profession" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="SchedulingModel.teacher" Width="1.5" PointX="0.75" PointY="3.75" />
+        <AssociationConnector Association="SchedulingModel.FK__Blok__codeTeach__440B1D61" />
+        <AssociationConnector Association="SchedulingModel.FK__IdealHour__codeP__403A8C7D" />
+        <AssociationConnector Association="SchedulingModel.FK__Impossibl__codeT__3B75D760" />
+        <AssociationConnector Association="SchedulingModel.FK__Professio__codeT__38996AB5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
