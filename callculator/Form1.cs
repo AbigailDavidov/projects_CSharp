@@ -88,25 +88,6 @@ namespace callculator
 
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-    
-        }
-
-        private void txt1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-       
-                
-                 
-
-        }
-
-        private void txt1_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-        }
-
-      
 
         private void txt1_Enter(object sender, EventArgs e)
         {
@@ -119,19 +100,6 @@ namespace callculator
 
         }
 
-        private void txt1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
