@@ -42,11 +42,8 @@ namespace Scheduling
         
         public bool CheckSubjects(Lesson l)
         {
-            //בודקת עם נשארו מס, שיעורים מספיק ביום
-            //בודק אילוצים של מורה
-            //בודק עם מס' הפעמים לא יותר מהכמות הנדרשת
-            //בודק שהשיעור לפני לא אותו הדבר
-            if (lessonNum + l.Amount < 10
+           /// checks few things: if learning hours for the day aren't full, teacher constraints, profession constraints, the profession an hour befor 
+           if (lessonNum + l.Amount < 10
                 && BLLessonMatch.CheckHoursPosible((int)D, lessonNum, l.SubjectInfo, l.Amount)
                 && BLLessonMatch.checkAmount(l.SubjectInfo) + l.Amount < l.SubjectInfo.numOfHours
                 && BLLessonMatch.CheckPrevious((int)D, lessonNum, l.SubjectInfo))
