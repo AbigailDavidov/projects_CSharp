@@ -13,16 +13,16 @@ namespace BL
         static SchedulingEntities schoolEntities = new SchedulingEntities();
 
         /// <summary>
-        /// פונקציה המחזירה רשימה של כל המקצועות
+        /// returns profession list
         /// </summary>
-        /// <returns>רשימת המורות</returns>
+        /// <returns> techer list</returns>
         public static List<Profession> GetAllSubjects()
         {
             return schoolEntities.Professions.ToList();
         }
 
         /// <summary>
-        /// פונקציה מוחקת מקצוע מטבלת מקצועות
+        /// removes profession from the list
         /// </summary>
         /// <param name="s"></param>
         public static void Remove(Profession s)
@@ -45,9 +45,8 @@ namespace BL
         }
 
         /// <summary>
-        /// פונקציה המוסיפה מקצוע לטבלת מקצועות
+        ///  adds profession
         /// </summary>
-        /// <param name="t">משתנה מסוג מקצוע</param>
         public static bool Add(Profession s)
         {
             try
@@ -71,7 +70,7 @@ namespace BL
         }
 
        /// <summary>
-       /// מחזירה מקצוע עפ"י השם שלו
+       /// returs code of profession  
        /// </summary>
        /// <param name="prof"></param>
        /// <returns></returns>
