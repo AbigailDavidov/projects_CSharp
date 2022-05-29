@@ -29,7 +29,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        ///  הפונקציה המופעלת עם פתיחת הקובץ, הפונקציה מקשרת את הטבלה לרשימה השעות הבלתי אפשריות של המורה ומכניסה את הנתונים על המורה טופס 
+        /// fills form with impossible hours and teacher details
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -41,7 +41,7 @@ namespace Scheduling
         }
 
        /// <summary>
-       /// הוספת שעה בלתי אפשריות ברשימה שעות בלתי אפשיות 
+       /// adds impossible hour
        /// </summary>
        /// <param name="sender"></param>
        /// <param name="e"></param>
@@ -57,7 +57,7 @@ namespace Scheduling
             }
         }
         /// <summary>
-        /// לחיצה על מחק שורה 
+        /// deletes row 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -78,7 +78,7 @@ namespace Scheduling
         }
  
       /// <summary>
-      /// בדיקת התקינות של הנתונים שהוקשו
+      /// input validation check
       /// </summary>
       /// <param name="sender"></param>
       /// <param name="e"></param>
@@ -131,7 +131,7 @@ namespace Scheduling
             }
         }
         /// <summary>
-        /// שומר את השורה שנבחרה
+        /// saves row
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
