@@ -22,7 +22,7 @@ namespace BL
         {
         }
         /// <summary>
-        /// פונקציה המחזירה רשימה של שעות לא אפשריות לפי מורה
+        /// method returns impossible hours for teacher
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
@@ -41,7 +41,7 @@ namespace BL
            
         }
         /// <summary>
-        /// מחזיר true or false האם השעה הזו אפשרית למורה הזו
+        /// returns true if the hour fits the teacher
         /// </summary>
         /// <param name="code"></param>
         /// <param name="d"></param>
@@ -56,7 +56,7 @@ namespace BL
             return false;
         }
         /// <summary>
-        /// הפונקציה מוחקת שעה בלתי אפשרית שנשלחה כפרמטר
+        /// method removes specific hour from impossible hours for the teacher
         /// </summary>
         /// <param name="n"></param>
         /// <param name="t"></param>
@@ -81,7 +81,7 @@ namespace BL
             }
         }
         /// <summary>
-        /// מוסיפה לבסיס הנתונים את את השעה הבלתי אפשרית שנשלחה עליה
+        /// method adds specific hour as impossible for the teacher
         /// </summary>
         /// <param name="code"></param>
         /// <param name="d"></param>
@@ -108,7 +108,7 @@ namespace BL
             }
         }
         /// <summary>
-        /// מחזירה true or false אם התאריך הזה קיים ברשימת השעות הבלתי אפשריות
+        /// returns true or false if the date appears in impossible hours list
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
@@ -120,7 +120,7 @@ namespace BL
                 return false;
         }
         /// <summary>
-        /// מחזירה רשימה של שעות בלתי אפשריות עפ"י מורה שהתקבל
+        /// returns list of impossible hours for the teacher
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
@@ -130,7 +130,7 @@ namespace BL
                return schoolEntities.ImpossibleHours.Where(i => i.codeTeach == t.code).ToList();
         }
         /// <summary>
-        /// מחזיר שם מורה עפ"י הקוד שלה
+        /// retrns name of teacher by code
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
