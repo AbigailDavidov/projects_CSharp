@@ -29,7 +29,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// מביא את המקצועות לרשימה 
+        /// get profession list
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -46,7 +46,7 @@ namespace Scheduling
          
         }
         /// <summary>
-        /// בליחצה על שמור מוריד 1 מהמספר השיעורים הנצרך ובודק את השעות הבילתי אפשריות  והאידליות
+        /// saves profession to the hour that was picked, removes 1 fron overall count of hours per week, per profession
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -71,7 +71,7 @@ namespace Scheduling
         }
   
         /// <summary>
-        /// הרגע שהוא בחר מקצוע מהרשימה מכניס את שם המורה 
+        /// when profession was picked, fills teacher accordingly
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
