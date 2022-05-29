@@ -10,10 +10,7 @@ namespace BL
 {
     public class BLTeachers
     {
-        /// <summary>
-        /// פונקציה המחזירה רשימה של כל המורות
-        /// </summary>
-        /// <returns>רשימת המורות</returns>
+        /// <returns>teacher list </returns>
         public static List<teacher> GetAllTeachers()
         {
             SchedulingEntities schoolEntities = new SchedulingEntities();
@@ -22,7 +19,7 @@ namespace BL
         }
 
         /// <summary>
-        /// פונקציה המעדכנת נתונים של מורה
+        ///  updates teacher's deatails 
         /// </summary>
         /// <param name="teacher"></param> 
         public static void EditTeacher(teacher newTeacher, teacher teacher)
@@ -51,9 +48,8 @@ namespace BL
         }
 
         /// <summary>
-        /// פונקציה השומרת פרטי מורה בטבלת מורות
+        /// method adds teacher
         /// </summary>
-        /// <param name="t">משתנה מסוג מורה</param>
         public static void addTeacher(teacher newTeacher)
         {
             SchedulingEntities schoolEntities = new SchedulingEntities();
@@ -76,10 +72,9 @@ namespace BL
             }
         }
         /// <summary>
-        /// מחזירה את המורה עפ"י המקצוע
+        ///  returns teacher by profession
         /// </summary>
         /// <param name="prof"></param>
-        /// <returns></returns>
         public static teacher GetMember(string prof)
         {
             SchedulingEntities schoolEntities = new SchedulingEntities();
