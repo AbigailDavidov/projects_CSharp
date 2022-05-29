@@ -21,7 +21,7 @@ namespace Scheduling
         }
  
         /// <summary>
-        /// בלחיצה על הוסף מורה פותח טופס של הוספת מורה
+        /// opens adding teacher form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -32,7 +32,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// ברגע שטוען את הטופס מציג את כול המורות ע"י שמהיא אותם
+        /// gets all teachers
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -43,7 +43,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// ברגע שנצאים  על הטופס מרענן את כול המורות  ומהיא אותם
+        /// refreshin the form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -54,7 +54,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// מציג את הפרטים של אותה מורה ע"י לחיצה על  עדכן מורה
+        /// show teacher's details for editing
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -64,7 +64,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        ///שומר את השורה שלחצנו עליה בכול מיני אפשריות של לחיצה
+        /// saves row
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -84,7 +84,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// כאשר המשתמש לוחץ לחיצה כפולה על שורה בטבלה הפונקציה פותחת לו טופס עריכת מורה
+        /// double click on row from table will open up an editing teacher form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
