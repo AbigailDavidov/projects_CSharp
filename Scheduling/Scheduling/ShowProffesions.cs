@@ -21,7 +21,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// עם פתיחת הקובץ מקשר את הטבלה לכל הקורסים
+        /// gets all professions
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -31,7 +31,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// בלחיצה על הוסף מקצוע פותח טופס של הוספת קורס
+        /// opens editing course form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -42,7 +42,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// ברגע שעומדים על הטופס מרענן אותו וממביא את הקורסים מחדש
+        /// refreshing form and brings all courses
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -51,12 +51,6 @@ namespace Scheduling
             dataGridView1.DataSource = BLProffesion.GetAllSubjects();
             dataGridView1.Refresh();
         }
-
-        /// <summary>
-        ///  מוחקת את השורה שנבחרה על ושמורה במשתנה
-        /// </summary>
-        /// <param name="sender">כפתור "REMOVE"</param>
-        /// <param name="e"></param>
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -69,13 +63,6 @@ namespace Scheduling
             dataGridView1.Columns.Add("ID", "ID");*/
             dataGridView1.Refresh();
         }
-
-
-        /// <summary>
-        /// שומרת את שורה הנבחרת בתוך משנה 
-        /// </summary>
-        /// <param name="sender">טבלה</param>
-        /// <param name="e"></param>
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
