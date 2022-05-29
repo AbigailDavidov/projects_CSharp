@@ -23,11 +23,6 @@ namespace Scheduling
             InitializeComponent(); 
         }
 
-        /// <summary>
-        /// מביא 6 פקדים של יום ומביא את כול המקצועות עם מספר השעות שאמור להיות להם
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void ScheduleFrm_Load(object sender, EventArgs e)
         {
             int z = 30;
@@ -66,12 +61,6 @@ namespace Scheduling
 
             }}
 
-
-        /// <summary>
-        /// משנה את התג שהתקבלה למספר החדש שהתקבל
-        /// </summary>
-        /// <param name="n"></param>
-        /// <param name="mis"></param>
             public static void Func(string n, int mis)
             {
                 (l.Find(a => a.Name == n)).Text = n + "" + mis;
