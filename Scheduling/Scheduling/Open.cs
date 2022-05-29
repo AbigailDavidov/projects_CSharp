@@ -17,7 +17,7 @@ namespace Scheduling
             InitializeComponent();
         }
         /// <summary>
-        /// בליחצה על לוח שעות פותח את הטופס המיועד
+        /// opens the scheduling form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -27,7 +27,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// בליחצה על מורות פותח את הטופס המיועד
+        /// opens teacher editing form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -37,7 +37,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// בליחצה על מקצועות פותח את הטופס המיועד
+        /// opens profession editing form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
