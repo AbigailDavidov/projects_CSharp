@@ -11,8 +11,8 @@ namespace BL
     public class IdealHoursBL
     {
         
-        /// <summary>
-    /// בודק האם השעה הזו היא אידלית עבור אותו מורה
+    /// <summary>
+    /// checks if the hour is ideal for the teacher
     /// </summary>
     /// <param name="code"></param>
     /// <param name="codeH"></param>
