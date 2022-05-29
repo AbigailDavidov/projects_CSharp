@@ -19,7 +19,7 @@ namespace Scheduling
             InitializeComponent();
         }
         /// <summary>
-        /// יוצרת teacher חדש במסד נתונים
+        /// creates new teacher in db
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -34,7 +34,7 @@ namespace Scheduling
         }
 
         /// <summary>
-        /// בדיקת תקינות קלט עבור הנתונים שהוכנסו
+        /// input validation check
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
